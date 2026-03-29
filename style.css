@@ -1,11 +1,11 @@
 :root {
-    --bg-main: #f8fafc; /* Very light slate grey/blue structure */
+    --bg-main: #f1f5f9; /* Slate 100 for better contrast against white cards */
     --bg-secondary: #ffffff; /* Pure white for cards */
-    --accent: #2563eb; /* Professional Blue (Blue 600) */
-    --accent-hover: #1d4ed8; /* Blue 700 */
-    --text-primary: #0f172a; /* Slate 900 (almost black) */
-    --text-secondary: #475569; /* Slate 600 (dark grey) */
-    --border: rgba(0, 0, 0, 0.1);
+    --accent: #1d4ed8; /* Blue 700 for much higher contrast */
+    --accent-hover: #1e3a8a; /* Blue 900 */
+    --text-primary: #020617; /* Slate 950 (near black) */
+    --text-secondary: #334155; /* Slate 700 (darker grey) */
+    --border: rgba(0, 0, 0, 0.15); /* Slightly darker borders */
     
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
@@ -50,9 +50,9 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(248, 250, 252, 0.85);
+    background: rgba(241, 245, 249, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
 }
 
 .logo {
