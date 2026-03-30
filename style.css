@@ -337,17 +337,3 @@ footer {
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links { display: none; } /* Simplified for mobile */
 }
-
-/* Presentation Focus Mode */
-body.focus-mode-active .section, 
-body.focus-mode-active .hero {
-    opacity: 0.25;
-    filter: blur(3px);
-    transition: opacity 0.7s ease, filter 0.7s ease;
-}
-
-body.focus-mode-active .section.focused, 
-body.focus-mode-active .hero.focused {
-    opacity: 1;
-    filter: blur(0px);
-}
