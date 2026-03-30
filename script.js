@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.body.removeAttribute('data-theme');
+                themeToggle.textContent = 'Dark Mode';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = 'Light Mode';
+            }
+        });
+    }
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,

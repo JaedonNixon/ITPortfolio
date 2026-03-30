@@ -6,9 +6,23 @@
     --text-primary: #020617; /* Slate 950 (near black) */
     --text-secondary: #334155; /* Slate 700 (darker grey) */
     --border: rgba(0, 0, 0, 0.15); /* Slightly darker borders */
+    --nav-bg: rgba(241, 245, 249, 0.95);
+    --card-learnings-bg: #f1f5f9;
     
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --bg-secondary: #1e293b;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --card-learnings-bg: #0f172a;
 }
 
 * {
@@ -24,6 +38,7 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography styles */
@@ -50,9 +65,10 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(241, 245, 249, 0.95);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .logo {
@@ -280,10 +296,11 @@ nav {
 }
 
 .card-learnings {
-    background: #f1f5f9; /* Slate 100 */
+    background: var(--card-learnings-bg);
     padding: 1rem;
     border-radius: 8px;
     border-top: 1px solid var(--border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .card-learnings h4 {
