@@ -1,27 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
+    // Turn on focus mode immediately via JS
+    document.body.classList.add('focus-mode-active');
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    // 1. First-time fade in animations
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: stop observing once it's visible if we only want it to fade in once
-                // observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Grab all elements with the .fade-in class and observe them
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => {
-        observer.observe(el);
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+    // 2. Presentation Focus Mode (Dims/blurs inactive sections)
+    const focusObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('focused');
+            } else {
+                entry.target.classList.remove('focused');
+            }
+        });
+    }, { 
+        rootMargin: '-25% 0px -25% 0px', // Section must reach the middle of the screen to focus
+        threshold: 0 
     });
+
+    document.querySelectorAll('.hero, .section').forEach(sec => focusObserver.observe(sec));
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
