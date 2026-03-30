@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (targetElement) {
                 targetElement.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'center'
                 });
             }
         });
