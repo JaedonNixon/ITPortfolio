@@ -266,6 +266,10 @@ nav {
     gap: 0.75rem;
 }
 
+.skill-item {
+    display: inline-flex;
+}
+
 .skill-item .tag {
     font-size: 0.95rem;
     padding: 0.5rem 1.2rem;
